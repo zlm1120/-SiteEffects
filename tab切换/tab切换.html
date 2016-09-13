@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>tab切换</title>
+<style type="text/css">
+/*全局布局*/
+*{ margin:0; padding:0; list-style:none; font-size:12px;}
+/*类选择器*/
+.notice{ width:298px; height:98px; margin:10px; border:1px solid #666; overflow:hidden;}
+/*id选择器*/
+.notice-tit{ height:27PX; position:relative; background-color:#FF0;}
+/**/
+.notice-tit ul{ position:absolute; width:301px; left:-1px;}
+
+.notice-tit li{ float:left; width:58px; height:26px; line-height:26px;text-align:center; overflow:hidden; background-color:#fff; border-bottom:1px solid #ccc; padding:0 1px;}
+ 
+.notice-tit li.select{ background-color:#fff; border-bottom-color:#fff
+; border-left:1px solid #eee; border-right:1px solid #eee; padding:0;}
+
+.notice li a:link,.notice-tit li a:visited{ text-decoration:none; color:#CCC;}
+
+.notice li a:hover{ color:#f90;}
+
+
+.notice-con .mod{ margin:10px 10px 10px 19px;}
+
+.notice-con .mod ul li{ float:left; 
+width:134px; 
+height:25px; 
+overflow:hidden;}
+
+</style>
+
+<script type="text/javascript">
+	function $(id){
+		 return typeof id==='string'?document.getElementById(id):id;
+	}
+	window.onload=function(){
+		//获取鼠标划过或点击的标签显示对应的div
+		var titles=$('notice-tit').getElementsByTagName('li');
+		
+		var divs=$('notice-con').getElementsByTagName('div');
+		
+		//遍历
+		for( var i=0; i<titles.length; i++){
+			titles[i].id=i;
+			titles[i].onmouseover=function(){
+				for (var j=0; j<titles.length; j++) {
+					titles[j].className='';
+					this.className='select';
+					divs[j].style.display='none';
+					divs[this.id].style.display='block';
+				}
+			}
+		}
+		
+		if(titles.length!=divs.lemgth){
+			return;
+		}
+	}
+</script>
+</head>
+
+<body>
+<div id="notice" class="notice">
+	<div id="notice-tit" class="notice-tit">
+    	<ul>
+        	<li><a href="#">公告</a></li>
+            <li><a href="#">规则</a></li>
+            <li><a href="#">论坛</a></li>
+            <li><a href="#">安全</a></li>
+            <li><a href="#">公益</a></li>
+        </ul>
+    </div>
+    <div id="notice-con" class="notice-con">
+    	<div class="mod" style=" display:none">
+         <ul>
+         	<li><a href="#">公告</a></li>
+            <li><a href="#">要玩快乐玩足球</a></li>
+            <li><a href="#">要玩快乐玩足球</a></li>
+            <li><a href="#">要玩快乐玩足球</a></li>
+         </ul>
+        </div>
+        
+        <div class="mod" style=" display:none">
+         <ul>
+         	<li><a href="#">规则</a></li>
+            <li><a href="#">要玩</a></li>
+            <li><a href="#">要玩</a></li>
+            <li><a href="#">要玩</a></li>
+         </ul>
+        </div>
+        
+        <div class="mod" style="display:none">
+         <ul>
+         	<li><a href="#">论坛</a></li>
+            <li><a href="#">乐玩足球</a></li>
+            <li><a href="#">乐玩足球</a></li>
+            <li><a href="#">乐玩足球</a></li>
+         </ul>
+        </div>
+        
+         <div class="mod" style="display: none;">
+         <ul>
+         	<li><a href="#">安全</a></li>
+            <li><a href="#">玩足球</a></li>
+            <li><a href="#">玩足球</a></li>
+            <li><a href="#">玩足球</a></li>
+         </ul>
+        </div>     
+        
+         <div class="mod" style="display: none;">
+         <ul>
+         	<li><a href="#">公益</a></li>
+            <li><a href="#">玩足球</a></li>
+            <li><a href="#">玩足球</a></li>
+            <li><a href="#">玩足球</a></li>
+         </ul>
+        </div>     
+        
+    </div>
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	font-size: 12px;
+	line-height: 1.7;
+}
+
+li{
+	list-style: none;
+}
+/*右邊*的樣式*/
+.menu{
+	position: fixed;
+	top: 100px;
+	left: 50%;
+	margin-left: 400px;  /*content宽度的一半*/
+	width: 80px;
+}
+
+/*hack ie6*/
+
+*html .menu{
+	position: absolute;
+	top: expression(((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+100+'px');
+}
+
+*html, *html body{
+	background-image: url(about:blank);
+	background-attachment: fixed;
+}
+
+.menu ul li a{
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	font-size: 14px;
+	margin: 5px 0;
+	color: #333;
+	width: 80px;
+	height: 50px;
+	line-height: 50px;
+}
+
+.menu ul li a:hover,
+.menu ul li a.current{
+	color: #fff;
+	background-color: #0088BB;
+}
+
+/*左边的样式*/
+.content{
+	width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.content .item{
+	padding: 20px;
+	margin-bottom: 20px;
+	border: 1px dotted #0088BB;
+}
+
+.content .item h2{
+	color: #0088bb;
+}
+
+.content .item ul li{
+	display: inline;
+}
+
+.content .item ul li a img{
+	width: 230px;
+	height: 230px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视频播放</title>
+</head>
+<body>
+<button  onclick="clickv()">播放/暂停</button>
+    <video controls="controls" id="video">
+        <source src="audio/杨洋%20-%20微微一笑很倾城.mp4">
+        <source src="audio/杨洋%20-%20微微一笑很倾城.mp4"> <!--不同浏览器之间的支持的编码格式-->
+        你的浏览器不支持
+    </video>
+</body>
+<script>
+    var v=document.getElementById("video");
+    function  clickv() {
+        if (v.paused){
+            v.play();
+        }else{
+            v.pause();
+        }
+    }
+    /*放大*/
+    function clickbig() {
+        v.width=800;
+        v.height=800;
+    }
+    /*缩小*/
+    function clicksmall() {
+        v.width=300;
+        v.height=300;
+    }
+</script>
+</html>
